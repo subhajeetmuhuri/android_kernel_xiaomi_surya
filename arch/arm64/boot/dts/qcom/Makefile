@@ -1,3 +1,9 @@
+ifeq ($(CONFIG_MACH_XIAOMI),y)
+ifeq ($(CONFIG_BUILD_ARM64_DT_OVERLAY),y)
+dtbo-$(CONFIG_MACH_XIAOMI_SURYA) += surya-sdmmagpie-overlay.dtbo
+surya-sdmmagpie-overlay.dtbo-base := surya-sdmmagpie.dtb
+endif
+else
 # SPDX-License-Identifier: GPL-2.0
 ifeq ($(TARGET_BOARD_TYPE),auto)
 ifeq ($(CONFIG_BUILD_ARM64_DT_OVERLAY),y)
@@ -606,6 +612,7 @@ $(obj)/%.dtbo:$(src)/../../../../arm64/boot/dts/qcom/%.dts FORCE
 dtbs: $(addprefix $(obj)/,$(dtb-y)) $(addprefix $(obj)/,$(dtbo-y))
 else
 dtbs: $(addprefix $(obj)/../,$(dtb-y))
+endif
 endif
 endif
 clean-files	:= *.dtb *.dtbo
