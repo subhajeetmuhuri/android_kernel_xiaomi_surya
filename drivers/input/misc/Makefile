@@ -86,3 +86,5 @@ obj-$(CONFIG_INPUT_WM831X_ON)		+= wm831x-on.o
 obj-$(CONFIG_INPUT_XEN_KBDDEV_FRONTEND)	+= xen-kbdfront.o
 obj-$(CONFIG_INPUT_YEALINK)		+= yealink.o
 obj-$(CONFIG_INPUT_IDEAPAD_SLIDEBAR)	+= ideapad_slidebar.o
+obj-$(CONFIG_INPUT_AW8624_HAPTIC_SURYA) += aw8624_haptic_surya/
+obj-$(CONFIG_INPUT_DRV2624_HAPTIC) += drv2624_haptic/
