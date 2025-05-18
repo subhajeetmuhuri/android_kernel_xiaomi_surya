@@ -89,6 +89,7 @@
 		};
 	};
 
+/*
 	wsa_macro: wsa-macro@62f00000 {
 		compatible = "qcom,wsa-macro";
 		reg = <0x62f00000 0x0>;
@@ -142,6 +143,7 @@
 		};
 
 	};
+*/
 
 	va_macro: va-macro@62f20000 {
 		compatible = "qcom,va-macro";
@@ -244,8 +246,10 @@
 	asoc-codec-names = "msm-stub-codec.1", "bolero_codec",
 			   "msm-ext-disp-audio-codec-rx";
 	qcom,wsa-max-devs = <2>;
+/*
 	qcom,wsa-devs = <&wsa881x_0211>, <&wsa881x_0212>,
 			<&wsa881x_0213>, <&wsa881x_0214>;
+*/
 	qcom,wsa-aux-dev-prefix = "SpkrLeft", "SpkrRight",
 				  "SpkrLeft", "SpkrRight";
 	qcom,codec-max-aux-devs = <1>;
@@ -271,12 +275,14 @@
 		qcom,lpi-gpios;
 	};
 
+/*
 	wsa_swr_gpios: wsa_swr_clk_data_pinctrl {
 		compatible = "qcom,msm-cdc-pinctrl";
 		pinctrl-names = "aud_active", "aud_sleep";
 		pinctrl-0 = <&wsa_swr_clk_active &wsa_swr_data_active>;
 		pinctrl-1 = <&wsa_swr_clk_sleep &wsa_swr_data_sleep>;
 	};
+*/
 
 	rx_swr_gpios: rx_swr_clk_data_pinctrl {
 		compatible = "qcom,msm-cdc-pinctrl";
@@ -296,6 +302,7 @@
 		qcom,lpi-gpios;
 	};
 
+/*
 	wsa_spkr_en1: wsa_spkr_en1_pinctrl {
 		compatible = "qcom,msm-cdc-pinctrl";
 		pinctrl-names = "aud_active", "aud_sleep";
@@ -309,6 +316,7 @@
 		pinctrl-0 = <&spkr_2_sd_n_active>;
 		pinctrl-1 = <&spkr_2_sd_n_sleep>;
 	};
+*/
 
 	wcd9xxx_intc: wcd9xxx-irq {
 		status = "disabled";
