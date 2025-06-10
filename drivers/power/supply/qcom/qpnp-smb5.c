@@ -2142,9 +2142,6 @@ static enum power_supply_property smb5_batt_props[] = {
 	POWER_SUPPLY_PROP_TIME_TO_FULL_NOW,
 	POWER_SUPPLY_PROP_CHARGE_FULL_DESIGN,
 	POWER_SUPPLY_PROP_TYPEC_MODE,
-#ifdef CONFIG_MACH_XIAOMI_SURYA
-	POWER_SUPPLY_PROP_CHARGE_AWAKE_STATE,
-#endif
 };
 
 #define DEBUG_ACCESSORY_TEMP_DECIDEGC	250
@@ -2324,11 +2321,6 @@ static int smb5_batt_get_prop(struct power_supply *psy,
 		else
 			val->intval = chg->typec_mode;
 		break;
-#ifdef CONFIG_MACH_XIAOMI_SURYA
-	case POWER_SUPPLY_PROP_CHARGE_AWAKE_STATE:
-		rc = smblib_get_prop_batt_awake(chg, val);
-		break;
-#endif
 	default:
 		pr_err("batt power supply prop %d not supported\n", psp);
 		return -EINVAL;

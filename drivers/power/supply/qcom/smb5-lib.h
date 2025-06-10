@@ -1134,8 +1134,4 @@ struct usbpd *smb_get_usbpd(void);
 
 int smblib_init(struct smb_charger *chg);
 int smblib_deinit(struct smb_charger *chg);
-#ifdef CONFIG_MACH_XIAOMI_SURYA
-int smblib_get_prop_batt_awake(struct smb_charger *chg,
-				union power_supply_propval *val);
-#endif
 #endif /* __SMB5_CHARGER_H */
